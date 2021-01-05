@@ -6,6 +6,15 @@ function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
+  const signIn = (event) => {
+      event.preventDefault();
+
+  }
+
+  const register = (event) => {
+      event.preventDefault();
+  }
+
   return (
     <div className="login">
       <Link to="/">
@@ -24,14 +33,14 @@ function Login() {
           <label for="password">E-mail</label>
           <input type="password" name="password" value={password} onChange={e=>setPassword(e.target.value)} />
 
-          <button className="login__signInButton">Sign in</button>
+          <button className="login__signInButton" type="submit" onClick={signIn}>Sign in</button>
         </form>
         <p>
           By signing-in you agree to Amazon's Clone of Use & Sale. Please see
           our Privacy Notice, our Cookies Notice and our Interest-Based Ads
           Notice.
         </p>
-        <button className="login__RegisterButton">
+        <button onClick={register} className="login__RegisterButton">
           Create your Amazon Account
         </button>
       </div>

@@ -9,6 +9,7 @@ function Login() {
   const [password, setPassword] = useState("");
 
   const signIn = (event) => {
+    event.preventDefault();
       auth.signInWithEmailAndPassword(email, password)
         .then ( (auth)=> {
           history.push('./');
